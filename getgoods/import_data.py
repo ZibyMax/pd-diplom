@@ -2,7 +2,7 @@ import os
 import sys
 import yaml
 import django
-import orders.models
+
 from pprint import pprint
 
 BASE_DIR = os.path.join(os.path.dirname((os.path.abspath(__file__))))
@@ -18,7 +18,7 @@ def read_yaml(file):
 
 
 def main():
-    sys.path.append(os.path.join(BASE_DIR, 'test_project'))
+    sys.path.append(os.path.join(BASE_DIR, 'getgoods'))
     os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
     django.setup()
 
@@ -27,8 +27,15 @@ def main():
         data = read_yaml(os.path.join(BASE_DIR, 'data', file))
         # pprint(data)
 
-    for model in orders.models:
-        print(model)
+    models = list(filter(lambda model: model.__module__ == 'orders.models', django.apps.apps.get_models()))
+    shop = None
+    for model in models:
+        if model.__name__ == 'Shop':
+            shop = model
+    print(shop)
+    s1 = shop(name='Megafon')
+    print(s1)
+    s1.save()
 
 
 if __name__ == '__main__':
