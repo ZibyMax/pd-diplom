@@ -3,7 +3,6 @@ import sys
 import yaml
 import django
 
-from pprint import pprint
 
 BASE_DIR = os.path.join(os.path.dirname((os.path.abspath(__file__))))
 
@@ -26,11 +25,20 @@ def main():
 
     file_list = os.listdir(os.path.join(BASE_DIR, 'data'))
     for file in file_list:
-        data = read_yaml(os.path.join(BASE_DIR, 'data', file))
-        pprint(data)
+        shop_data = read_yaml(os.path.join(BASE_DIR, 'data', file))
 
-    obj, created = Shop.objects.update_or_create(id=1)
-    print(obj)
+        # import shop.name
+        shop, created = Shop.objects.update_or_create(name=shop_data['shop'])
+
+        # import categories
+        for category_data in shop_data['categories']:
+            Category.objects.update_or_create(
+                id=category_data['id'],
+                name=category_data['name'],
+                shop=shop
+            )
+
+        # import goods
 
 
 if __name__ == '__main__':
