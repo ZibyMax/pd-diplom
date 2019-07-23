@@ -1,0 +1,56 @@
+shop: Xiaomi
+categories:
+  - id: 224
+    name: Смартфоны
+  - id: 15
+    name: Аксессуары
+
+goods:
+  - id: 10001
+    category: 224
+    model: xiaomi/mi/a2
+    name: Смартфон Xiaomi Mi A2 64GB (золотистый)
+    price: 11000
+    price_rrc: 12000
+    quantity: 18
+    parameters:
+      "Диагональ (дюйм)": 5.99
+      "Разрешение (пикс)": 2160x1080
+      "Встроенная память (Гб)": 64
+      "Цвет": золотистый
+      "Камера (Мп)": 20+12 / 20
+  - id: 10002
+    category: 224
+    model: xiaomi/mi/a2
+    name: Смартфон Xiaomi Mi A2 64GB (красный)
+    price: 11000
+    price_rrc: 12000
+    quantity: 6
+    parameters:
+      "Диагональ (дюйм)": 5.99
+      "Разрешение (пикс)": 2160x1080
+      "Встроенная память (Гб)": 64
+      "Цвет": красный
+      "Камера (Мп)": 20+12 / 20
+  - id: 10003
+    category: 224
+    model: xiaomi/mi/max3
+    name: Смартфон Xiaomi Mi Max 3 128GB (черный)
+    price: 19800
+    price_rrc: 22990
+    quantity: 3
+    parameters:
+      "Диагональ (дюйм)": 6.9
+      "Разрешение (пикс)": 2160 x 1080
+      "Встроенная память (Гб)": 128
+      "Цвет": черный
+      "Камера (Мп)": 12+5 / 8
+  - id: 10004
+    category: 15
+    model: case/xiaomi/mi/a2
+    name: Чехол для смартфона Xiaomi Mi A2 (прозрачный)
+    price: 120
+    price_rrc: 390
+    quantity: 8
+    parameters:
+      "Цвет": прозрачный
