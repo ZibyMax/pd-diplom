@@ -32,11 +32,11 @@ def main():
 
         # import categories
         for category_data in shop_data['categories']:
-            Category.objects.update_or_create(
+            category, created = Category.objects.update_or_create(
                 id=category_data['id'],
                 name=category_data['name'],
-                shop=shop
             )
+            category.shops.add(shop)
 
         # import goods
 
