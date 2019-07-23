@@ -1,0 +1,26 @@
+shop: Duracell
+categories:
+  - id: 2
+    name: Батарейки
+
+goods:
+  - id: 30001
+    category: 2
+    model: duracell/aa/ultra
+    name: Батарейки Duracell Ultra Power AA (4 шт.)
+    price: 150
+    price_rrc: 200
+    quantity: 330
+    parameters:
+      "Размер": AA
+      "Количество в упаковке": 4
+  - id: 30002
+    category: 2
+    model: duracell/aaa/basic
+    name: Батарейки Duracell Basic AAA (8 шт.)
+    price: 350
+    price_rrc: 400
+    quantity: 6
+    parameters:
+      "Размер": AAA
+      "Количество в упаковке": 8
