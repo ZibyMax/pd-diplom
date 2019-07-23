@@ -20,12 +20,13 @@ def main():
     sys.path.append(os.path.join(BASE_DIR, 'getgoods'))
     os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
     django.setup()
-    from orders.models import Shop, Category, Product, ProductInfo, Parameter,\
-        ProductParameter, Order, OrderItem, Contact
+    from orders.models import Shop, Category, Product, ProductInfo, Parameter, ProductParameter
 
     file_list = os.listdir(os.path.join(BASE_DIR, 'data'))
+    goods_counter = 0
     for file in file_list:
         shop_data = read_yaml(os.path.join(BASE_DIR, 'data', file))
+        goods_counter += len(shop_data['goods'])
 
         # import shop.name
         shop, created = Shop.objects.update_or_create(name=shop_data['shop'])
@@ -39,6 +40,30 @@ def main():
             category.shops.add(shop)
 
         # import goods
+        for item in shop_data['goods']:
+            category = Category.objects.get(id=item['category'])
+            name = item['model']
+            product, created = Product.objects.get_or_create(name=name, category=category)
+
+            product_info, created = ProductInfo.objects.get_or_create(
+                id=item['id'],
+                product=product,
+                name=item['name'],
+                price=item['price'],
+                price_rrc=item['price_rrc'],
+                quantity=item['quantity'],
+                shop=shop
+            )
+
+            for parameter_name, value in item['parameters'].items():
+                parameter, created = Parameter.objects.get_or_create(name=parameter_name)
+                product_parameter, created = ProductParameter.objects.get_or_create(
+                    product_info=product_info,
+                    parameter=parameter,
+                    value=value
+                )
+
+        print(f'Installed goods: {goods_counter} item(s) from {len(file_list)} shop(s)')
 
 
 if __name__ == '__main__':
