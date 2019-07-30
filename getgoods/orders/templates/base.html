@@ -14,7 +14,7 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-light bg-white">
-    <a class="navbar-brand brand-style mx-4 my-1" href="#">
+    <a class="navbar-brand brand-style mx-4 my-1" href="{% url 'index' %}">
       <p class="getgood-brand-style">GetGoods</p>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
         <a class="nav-item nav-link" href="#">Заказы</a>
         <a class="nav-item nav-link" href="#">Выход</a>
       {% else %}
-        <a class="nav-item nav-link" href="#">Войдите</a>
+        <a class="nav-item nav-link" href="{% url 'login' %}">Войдите</a>
         <span class="navbar-text">или</span>
         <a class="nav-item nav-link" href="#">зарегистрируйтесь</a>
       {% endif %}

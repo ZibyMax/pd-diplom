@@ -11,3 +11,5 @@ def index(request):
 class LoginFormView(FormView):
     form_class = LoginForm
     template_name = 'login.html'
+
+
