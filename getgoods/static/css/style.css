@@ -2,11 +2,59 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.getgood-brand-style {
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 2.5rem;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.logo {
   font-size: 1.75rem;
   font-weight: 900;
   border-top: solid 2px #cecece;
   border-bottom: solid 2px #cecece;
   line-height: 1.75rem;
-  margin: 1px 0 0 0;
+  margin: 1.125rem 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+}
+
+.menu-item {
+  margin-left: 1rem;
+}
+
+.menu-item a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.menu-item a:hover {
+  color: #343a40;
+  text-decoration: underline;
+}
+
+.menu-item_goods-counter {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  background-color: #6c757d;
+  margin-left: 0.2rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
 }
