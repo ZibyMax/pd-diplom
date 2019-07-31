@@ -7,7 +7,7 @@
   <form class="login-form" method="post">
     {% csrf_token %}
     {{ form }}
-    <input type="submit" value="Войти">
+    <input type="submit" value="Зарегистрироваться">
     <ul class="form-menu">
       <li class="menu-item"><a href="{% url 'login' %}">Вход</a></li>
       <li class="menu-item"><a href="{% url 'forgot' %}">Забыли пароль?</a></li>

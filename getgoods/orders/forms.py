@@ -8,3 +8,5 @@ class LoginForm(forms.Form):
 
 class ForgotForm(forms.Form):
     email = forms.EmailField(max_length=150, label='Email', label_suffix='')
+
+

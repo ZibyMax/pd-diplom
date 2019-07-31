@@ -139,3 +139,10 @@ class Contact(models.Model):
         verbose_name = 'Контакт'
         verbose_name_plural = 'Контакты'
 
+
+class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    email_as_username = models.EmailField(max_length=150, unique=True)
+    company = models.CharField(max_length=100)
+    position = models.CharField(max_length=100)
+    patronymic = models.CharField(max_length=100)
