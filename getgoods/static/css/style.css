@@ -74,7 +74,10 @@ main {
 }
 
 .login-form {
-  width: 100px;
-  height: 100px;
-  background-color: red;
+  width: 458px;
+  height: 263px;
+  border: solid 1px #838383;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 68px;
 }
